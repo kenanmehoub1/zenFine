@@ -82,7 +82,7 @@
         <!-- Header -->
         <div class="header">
             <h1>{{ trans('home.new_inquiry_title') }}</h1>
-            <p>{{ trans('home.new_inquiry_subtitle') }}</p>
+           
         </div>
 
         <!-- Content -->
@@ -121,9 +121,7 @@
             </div>
         </div>
 
-        <!-- Footer -->
-        <div class="footer">
-            <p>{{ trans('home.email_footer') }}</p>
+     
             
         </div>
     </div>

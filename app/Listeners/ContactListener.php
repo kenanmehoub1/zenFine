@@ -14,8 +14,11 @@ class ContactListener
         Mail::send('emails.contact', [
             'x' => $data,
         ], function ($message) use ($data) {
-            $message->to($data['business_email'])
-                    ->subject('Customer inquiry');
+             
+            $message->to('kasersaleh8@gmail.com')   
+                    ->subject('Customer inquiry  ' )   
+                     ->replyTo($data['business_email'])    
+                      ->from(env('MAIL_FROM_ADDRESS'), env('MAIL_FROM_NAME'));
         });
     }
 }
