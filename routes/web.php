@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Mail;
+use Spatie\Sitemap\Sitemap;
+use Spatie\Sitemap\Tags\Url;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +15,36 @@ use Illuminate\Support\Facades\Mail;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+
+// ============= SITEMAP ROUTE =============
+// ضع هذا الكود في بداية الملف أو نهايته - المهم يكون خارج Route::group
+Route::get('/sitemap.xml', function () {
+    $sitemap = Sitemap::create();
+    
+    // الصفحات الثابتة في موقعك (كل الصفحات الموجودة في routes)
+    $pages = [
+        '/' => ['priority' => '1.0', 'freq' => 'daily'],
+        '/home' => ['priority' => '0.9', 'freq' => 'daily'],
+        '/services' => ['priority' => '0.9', 'freq' => 'weekly'],
+        '/House_cleaning' => ['priority' => '0.8', 'freq' => 'weekly'],
+        '/Office_cleaning' => ['priority' => '0.8', 'freq' => 'weekly'],
+        '/Gym_cleaning' => ['priority' => '0.8', 'freq' => 'weekly'],
+        '/gallery' => ['priority' => '0.7', 'freq' => 'monthly'],
+        '/contact' => ['priority' => '0.8', 'freq' => 'monthly'],
+        '/about' => ['priority' => '0.8', 'freq' => 'monthly'],
+    ];
+    
+    foreach ($pages as $url => $config) {
+        $sitemap->add(Url::create($url)
+            ->setLastModificationDate(now())
+            ->setChangeFrequency($config['freq'])
+            ->setPriority($config['priority']));
+    }
+    
+    return $sitemap->toResponse(request());
+});
+// ==========================================
+
 Route::get('lang/{lang}', [App\Http\Controllers\zenContactController::class, 'lang'])->name('lang.switch');
 
 Route::group(['middleware' => 'lang'], function() {
@@ -27,27 +59,28 @@ Route::group(['middleware' => 'lang'], function() {
     Route::get('/services', function () {
         return view('Services');
     });
-      Route::get('/House_cleaning', function () {
+    
+    Route::get('/House_cleaning', function () {
         return view('HouseCleaning');
     });
-      Route::get('/Office_cleaning', function () {
+    
+    Route::get('/Office_cleaning', function () {
         return view('OfficeCleaning');
     });
-         Route::get('/Gym_cleaning', function () {
+    
+    Route::get('/Gym_cleaning', function () {
         return view('GymCleaning');
     });
    
-
     Route::get('/gallery', function () {
         return view('Gallery');
     });
-
   
-
     Route::get('/contact', function () {
         return view('Contact');
     });
-       Route::get('/about', function () {
+    
+    Route::get('/about', function () {
         return view('about');
     });
 
