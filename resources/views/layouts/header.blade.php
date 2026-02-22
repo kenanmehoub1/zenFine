@@ -17,7 +17,7 @@
             line-height: 1.6;
         }
         .container{
-             background: #EAEAEA;
+             background: white;
              min-height: 100vh;
              margin:0;
              border:none;
@@ -49,7 +49,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background:#EAEAEA;
+            background:white;
             
         }   
         
@@ -624,7 +624,7 @@ background-position: center center;
             position: sticky;
             top: 0;
             z-index: 1000;
-            background: #EAEAEA;
+            background: white;
             transition: all 0.3s ease;
             box-shadow: 0 2px 10px rgba(0,0,0,0);
         }
@@ -862,7 +862,7 @@ background-position: center center;
             position: sticky;
             top: 0;
             z-index: 1000;
-            background: #EAEAEA;
+            background: white;
             transition: all 0.3s ease;
             box-shadow: 0 2px 10px rgba(0,0,0,0);
         }

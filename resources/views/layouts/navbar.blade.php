@@ -13,10 +13,10 @@
      </div>
    </div>
    <div class="content-header" >
-        <a href="/home"><img class="logo1" src="{{ asset('image/logo11.jpg') }}" alt="" class="img1"></a>
+        <a href="/home"><img class="logo1" src="{{ asset('image/logo5.jpg') }}" alt="" class="img1"></a>
 
         <div class="header">
-            <a href="/home"><img class="logo" src="{{ asset('image/logo11.jpg') }}" alt="" class="img1"></a>
+            <a href="/home"><img class="logo" src="{{ asset('image/logo5.jpg') }}" alt="" class="img1"></a>
             
             <ul class="nav">
                   <li class="dropdown">

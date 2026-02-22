@@ -20,18 +20,18 @@ class GenerateSitemap extends Command
      *
      * @var string
      */
-    protected $description = 'Generate sitemap.xml file for ZenLife website';
+    protected $description = 'Generate sitemap.xml file for ZenFine website';
 
     /**
      * Execute the console command.
      */
     public function handle()
     {
-        $this->info('🔄 Generating sitemap for ZenLife...');
+        $this->info('🔄 Generating sitemap for ZenFine...');
         
         $sitemap = Sitemap::create();
         
-        // الصفحات الثابتة في موقع ZenLife
+        // الصفحات الثابتة في موقع ZenFine
         $pages = [
             '/' => ['priority' => '1.0', 'freq' => Url::CHANGE_FREQUENCY_DAILY],
             '/home' => ['priority' => '0.9', 'freq' => Url::CHANGE_FREQUENCY_DAILY],

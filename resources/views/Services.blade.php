@@ -4,7 +4,17 @@
     .container{
      background:#bfe7adff;    
     }
- 
+     .top-nav{
+         
+          background:#BFE7AD;
+            
+        }
+  .logo{
+            width: 120px;
+            height: 75px;
+            margin-left: 2rem;
+             margin-top: 1px;
+        }
         
         .gallery {
             
