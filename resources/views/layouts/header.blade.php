@@ -1,7 +1,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="{{ asset('image/logo99.jpg') }}">
+  
+    <link rel="icon" type="image/png" href="{{ asset('image/logo99.jpg') }}">
+<link rel="apple-touch-icon" href="{{ asset('image/logo99.jpg') }}">
     <title>ZenFine For Property Care</title>
       <meta name="description" content="ZenFine | خدمات تنظيف احترافية للعقارات في دبي. نظافة شاملة بأسعار تنافسية. اتصل بنا اليوم لمنزل أو مكتب لامع.">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">

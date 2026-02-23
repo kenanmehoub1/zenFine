@@ -309,20 +309,21 @@
             border: 0px solid ;
             border-radius:0;
             width: 90%;
-            min-height: 150px;
+            min-height: 250px;
             margin-bottom: 0px;
             display: block;
             justify-content: center;
             align-items: center;
             color: #282624ff;
             text-align: center;
+            padding-top: 4rem;
         }
              .temple_blur{
            height: auto;
              }
           .blur h1{
             
-            font: 5em sans-serif;
+            font: 3em sans-serif;
           }
   .blur-btn a{
             font-size:20px;
@@ -376,7 +377,8 @@
         }
         .blur{
       
-            min-height: 100px;
+            min-height: 200px;
+            padding-top: 4rem;
          
         }
          }
@@ -401,7 +403,7 @@
                 <h1>{{trans('home.hero_title_line1')}}</h1>
                 <h1>{{trans('home.hero_title_line2')}}</h1>
                 <div class="blur-btn">
-                    <a href="/gallery" style="color:white; background:#4CAF9A;padding: 2% 6%;">{{trans('home.gallery')}}</a>
+                    <a href="/gallery" style="color:white; background:#4CAF9A;padding: 1.3% 7%;">{{trans('home.gallery')}}</a>
                     <a href="/contact" style="color:#4CAF9A; background:#E3EEEA; ">{{trans('home.contact_title')}}</a>
                  </div>
              </div>
