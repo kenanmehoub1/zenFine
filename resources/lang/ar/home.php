@@ -17,7 +17,7 @@ return [
     'phoneNumper1' => '+971545969516',
     'phoneNumper2' => '+971545969516',
     'email' => 'البريد الإلكتروني',
-    'email_address' => 'zenfineforpropertycare@gmail.com',
+    'email_address' => 'info@zenfine1.com',
     'quick_links_title' => 'روابط سريعة',
     'home' => 'الرئيسية',
     'services' => 'خدماتنا',
@@ -39,7 +39,7 @@ return [
     'full_name' => 'الاسم الكامل',
     'full_name_placeholder' => 'أدخل اسمك الكامل',
     'business_email' => 'البريد الإلكتروني للعمل',
-    'email_placeholder' => 'zenfineforpropertycare@gmail.com',
+    'email_placeholder' => 'info@zenfine1.com',
     'phone_number' => 'رقم الهاتف',
     'phone_placeholder' => '+971545969516',
     'your_message' => 'رسالتك',
@@ -57,7 +57,7 @@ return [
     'whatsapp_number' => 'واتساب: +971 56 100 4127',
     'call_number1' => 'اتصال: +971 56 100 4127',
     'call_number2' => 'اتصال: +971 4 568 9636',
-    'contact_email' => 'البريد الإلكتروني: zenfineforpropertycare@gmail.com',
+    'contact_email' => 'البريد الإلكتروني: info@zenfine1.com',
     'dubai_branch_title' => 'ZenFine',
     'dubai_branch_address' => 'العنوان:   
 المكتب 1-141-53

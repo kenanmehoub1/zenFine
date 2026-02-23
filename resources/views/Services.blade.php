@@ -303,16 +303,31 @@
             .gallery-title {
                 font-size: 24px;
             }
+             .blur{
+            background:none;
+            -webkit-backdrop-filter: blur(10px);
+            border: 0px solid ;
+            border-radius:0;
+            width: 90%;
+            min-height: 150px;
+            margin-bottom: 0px;
+            display: block;
+            justify-content: center;
+            align-items: center;
+            color: #282624ff;
+            text-align: center;
+        }
              .temple_blur{
-           height: 100px;
+           height: auto;
              }
-            .blur{
-                min-height: 80px;
-            }
+          .blur h1{
+            
+            font: 5em sans-serif;
+          }
   .blur-btn a{
-            font-size:10px;
-            margin:1%;
-            padding: 1% 2%;
+            font-size:20px;
+            margin:3%;
+            padding: 2% 3%;
        
         }
              .two{
@@ -348,6 +363,23 @@
     font-size: 4vw;
     }
         }
+         @media (max-width: 400px) {
+       .blur h1{
+            
+            font: 3em sans-serif;
+          }
+  .blur-btn a{
+            font-size:15px;
+            margin:2%;
+            padding: 1% 2%;
+       
+        }
+        .blur{
+      
+            min-height: 100px;
+         
+        }
+         }
 </style>
   <div class="content">
         
@@ -369,8 +401,8 @@
                 <h1>{{trans('home.hero_title_line1')}}</h1>
                 <h1>{{trans('home.hero_title_line2')}}</h1>
                 <div class="blur-btn">
-                    <a href="/gallery" style="color:white; background:#4CAF9A;">{{trans('home.gallery')}}</a>
-                    <a href="/contact" style="color:#4CAF9A; background:#E3EEEA; border:solid 3px #4CAF9A;">{{trans('home.contact_title')}}</a>
+                    <a href="/gallery" style="color:white; background:#4CAF9A;padding: 2% 6%;">{{trans('home.gallery')}}</a>
+                    <a href="/contact" style="color:#4CAF9A; background:#E3EEEA; ">{{trans('home.contact_title')}}</a>
                  </div>
              </div>
        </div>

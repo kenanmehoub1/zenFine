@@ -1,7 +1,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="{{ asset('image/logo99.jpg') }}">
     <title>ZenFine For Property Care</title>
+      <meta name="description" content="ZenFine | خدمات تنظيف احترافية للعقارات في دبي. نظافة شاملة بأسعار تنافسية. اتصل بنا اليوم لمنزل أو مكتب لامع.">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
@@ -317,6 +319,7 @@ background-position: center center;
             align-items: center;
             color: #282624ff;
             text-align: center;
+             padding: 1rem;
         }
         
         .blur-btn{
@@ -724,8 +727,10 @@ background-position: center center;
             }
             
             .blur{ 
-                font-size: 10px;
-                height: 140px; 
+                 padding: 1rem;
+                 font-size: 8px;
+                height: 120px; 
+                width: 50%;
             }
         }
         
@@ -735,8 +740,9 @@ background-position: center center;
             }
             
             .blur{ 
-                font-size: 9px;
+                 font-size: 8px;
                 height: 120px; 
+                width: 50%;
             }
         }
         
@@ -783,59 +789,24 @@ background-position: center center;
             
             .blur{ 
                 font-size: 8px;
-                height: 100px; 
-                width: 40%;
+                height: 120px; 
+                width: 65%;
             }
         }
-        @media (max-width: 500px) {
-            .page-content {
-                padding: 15px 10px;
-            }
-            
-            .section {
-                margin-bottom: 30px;
-            }
-            
-            .section h2 {
-                font-size: 20px;
-            }
-            
-            .section p {
-                font-size: 13px;
-            }
-            
-            .footer {
-                padding: 30px 0 15px;
-            }
-            
-            .footer-section h3 {
-                font-size: 18px;
-            }
-            
-            .footer-section p {
-                font-size: 14px;
-            }
-            
-            .social-link {
-                width: 35px;
-                height: 35px;
-            }
-            
-            .footer-bottom {
-                padding: 20px 15px 0;
-            }
-        }
+       
 
         
         @media (max-width: 600px) {
             .one{
+                
                 min-height: 335px;         
             }
             
             .blur{ 
-                font-size: 6px;
-                height: 80px; 
-                width: 45%;
+                padding: 1rem;
+                font: 7px sans-serif;
+                height: 120px; 
+                width: 65%;
             }
         }
         
@@ -845,9 +816,7 @@ background-position: center center;
             }
             
             .blur{ 
-                font-size: 6px;
-                height: 80px; 
-                width: 50%;
+               
             }
         }
         
@@ -909,13 +878,47 @@ background-position: center center;
             }
 
             .one{
-                min-height: 290px;  
+                min-height: 300px;  
             }
             
             .blur{ 
-                font-size: 6px;
-                height: 80px; 
-                width: 50%;
+             
+            }
+              .page-content {
+                padding: 15px 10px;
+            }
+            
+            .section {
+                margin-bottom: 30px;
+            }
+            
+            .section h2 {
+                font-size: 20px;
+            }
+            
+            .section p {
+                font-size: 13px;
+            }
+            
+            .footer {
+                padding: 30px 0 15px;
+            }
+            
+            .footer-section h3 {
+                font-size: 18px;
+            }
+            
+            .footer-section p {
+                font-size: 14px;
+            }
+            
+            .social-link {
+                width: 35px;
+                height: 35px;
+            }
+            
+            .footer-bottom {
+                padding: 20px 15px 0;
             }
         }
         
@@ -927,9 +930,9 @@ background-position: center center;
                 min-height: 300px;         
             }
             .blur{ 
-                font-size: 6px;
-                height: 80px; 
-                width: 60%;
+                  font: 7px sans-serif;
+                height: 100px; 
+                width: 75%;
             }
             
             .header.show{

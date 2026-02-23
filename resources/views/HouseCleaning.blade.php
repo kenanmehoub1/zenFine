@@ -9,7 +9,7 @@
         margin: 0 auto 40px;
     }
     .one1 img{
-        width: 60%;
+        width: 80%;
         margin: 0 auto;
     }
     
@@ -154,7 +154,12 @@
         .contact-btn {
             padding: 16px 35px;
             font-size: 18px;
+
         }
+          .one1 img{
+        width: 100%;
+        margin: 0 auto;
+    }
     }
 </style>
 <div class="one1">

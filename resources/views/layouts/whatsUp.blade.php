@@ -174,11 +174,12 @@
 
         @media (max-width: 480px) {
             .whatsapp-button {
-                width: 50px;
-                height: 50px;
+                width: 55px;
+                height: 55px;
                 bottom: 10px;
-                right: 10px;
+                right: 15px;
             }
+            
             
         }
        

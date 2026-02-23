@@ -9,7 +9,7 @@
         margin: 0 auto 40px;
     }
     .one1 img{
-        width: 60%;
+        width: 80%;
         margin: 0 auto;
         border-radius: 8px;
         box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
@@ -159,7 +159,7 @@
         }
         
         .one1 img {
-            width: 85%;
+            width: 100%;
         }
     }
 </style>

@@ -30,8 +30,8 @@
         <h1>{{trans('home.hero_title_line1')}}</h1>
         <h1>{{trans('home.hero_title_line2')}}</h1>
         <div class="blur-btn">
-            <a href="/contact" style="color:white; background:#4CAF9A;">{{trans('home.contact')}}</a>
-            <a href="/gallery" style="color:#4CAF9A; background:#E3EEEA; border:solid 3px #4CAF9A;">{{trans('home.gallery')}}</a>
+            <a href="/contact" style="color:black; background:#4CAF9A;  font: 10px sans-serif;">{{trans('home.contact')}}</a>
+            <a href="/gallery" style="color:black;padding: 2% 6%; background:#E3EEEA; border:solid 2.5px #4CAF9A; font: 10px sans-serif;">{{trans('home.gallery')}}</a>
         </div>
     </div>
 </div>

@@ -9,7 +9,7 @@
         margin: 0 auto 40px;
     }
     .one1 img{
-        width: 60%;
+        width: 80%;
         margin: 0 auto;
     }
     
@@ -157,7 +157,7 @@
         }
         
         .one1 img {
-            width: 80%;
+            width: 100%;
         }
     }
 </style>
