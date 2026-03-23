@@ -150,6 +150,8 @@ We are here to handle the details, so you can enjoy the beauty of your home.',
     'free_quote_button' => 'Get Your Free Quote Now',
     'we_handle' => ' We handle tough tasks, routine work, and emergency needs. 
                 We are ready when you need us.',
+    'house_cleaning_intro_title' => 'ZenFine House Cleaning in Dubai',
+    'house_cleaning_intro_text' => 'Discover premium house cleaning in Dubai with ZenFine, where every home is treated with exceptional care. Our expert maid service and home cleaning packages are designed for families, villas, and apartments across Dubai. Trusted for daily cleaning, deep cleaning and move-in move-out cleaning, ZenFine delivers spotless results every time. For reliable Dubai home cleaning, professional housekeepers, and affordable cleaning solutions, choose ZenFine today.',
                  'k'=>'image/post2.jpg',
                  'work_for_us'=>'We work around the clock to serve you',
                   'Deep_cleaning'=>'Deep cleaning',

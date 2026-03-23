@@ -6,7 +6,7 @@
                 <a href="https://www.instagram.com/zenfine.fpc" class="social-link-n" aria-label="{{trans('home.social_instagram')}}"><i class="fab fa-instagram"></i></a>
                 <a href="#" class="social-link-n" aria-label="{{trans('home.social_youtube')}}"><i class="fab fa-youtube"></i></a>
             </div></div>
-     <div class='phone' style="  margin-left:20px;"> 
+     <div class='phone' style="margin-left:20px;"> 
         <p>{{trans('home.Payment')}} : <span style="font-size:1.5rem;"><i class="fa-brands fa-cc-mastercard" style="color: #eb001b;"></i>
      <i class="fa-brands fa-cc-visa" style="color: #1a1f71;"></i></span>
     </p>

@@ -86,6 +86,11 @@ text-align:center;
     width: 100%;
     
 }
+.second-img video{
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1;
+}
 .second-post{
     
     width: 50%;              
@@ -251,6 +256,11 @@ text-align:center;
     width: 100%;
     
 }
+.second-img video{
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1;
+}
 .second-post{
     
     width: 100%;  
@@ -322,7 +332,10 @@ text-align:center;
 
     <div class="second"style=" direction:{{trans('home.dir')}};">
 <div class="second-img">
-<img src="{{ asset('image/new2.jpg') }}" alt="">
+<video controls width="100%" height="auto">
+<source src="{{ asset('image/v1.mp4') }}" type="video/mp4">
+Your browser does not support the video tag.
+</video>
 </div>
     <div class="second-post">
         <h2>{{trans('home.professional_home_cleaning_title')}}</h2>

@@ -161,9 +161,37 @@
         margin: 0 auto;
     }
     }
+
+    .house-description {
+        max-width: 1000px;
+        margin: 0 auto 30px;
+        text-align: center;
+        color: #2c3e50;
+        line-height: 1.6;
+        font-size: 1.05rem;
+        padding: 0 15px;
+    }
+
+    .house-description h1 {
+        font-size: 2rem;
+        margin-bottom: 15px;
+        color: #186aa5;
+        font-weight: 800;
+    }
+
+    .house-description p {
+        margin: 0 auto;
+        max-width: 900px;
+    }
 </style>
+
+<div class="house-description" style="direction: ltr;">
+    <h1>{{ trans('home.house_cleaning_intro_title') }}</h1>
+    <p>{{ trans('home.house_cleaning_intro_text') }}</p>
+</div>
+
 <div class="one1">
-    <img src="{{ asset('image/new8.jpg') }}" alt="">
+    <img src="{{ asset('image/new8.jpg') }}" alt=""> 
 </div>
 <div class="one1">
     <img src="{{ asset('image/new7.jpg') }}" alt="">

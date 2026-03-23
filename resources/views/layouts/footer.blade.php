@@ -118,6 +118,7 @@
     color: white;
 }
 
+
 /* تصميم متجاوب */
 @media (max-width: 768px) {
     .footer-bottom {
