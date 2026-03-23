@@ -4,6 +4,54 @@
   
     <link rel="icon" type="image/png" href="{{ asset('image/logo99.jpg') }}">
 <link rel="apple-touch-icon" href="{{ asset('image/logo99.jpg') }}">
+    <meta name="keywords" content="تنظيف المنازل، تنظيف المكاتب، خدمات التنظيف دبي، ZenFine، نظافة احترافية">
+    <meta name="author" content="ZenFine">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="{{ url()->current() }}">
+    <link rel="sitemap" type="application/xml" href="{{ url('sitemap.xml') }}">
+    
+    <!-- Open Graph لـ Facebook -->
+    <meta property="og:title" content="ZenFine For Property Care">
+    <meta property="og:description" content="خدمات تنظيف احترافية للعقارات في دبي">
+    <meta property="og:image" content="{{ asset('image/logo99.jpg') }}">
+    <meta property="og:url" content="{{ url()->current() }}">
+    <meta property="og:type" content="website">
+    
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="ZenFine For Property Care">
+    <meta name="twitter:description" content="خدمات تنظيف احترافية للعقارات في دبي">
+    <meta name="twitter:image" content="{{ asset('image/logo99.jpg') }}">
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'GA_MEASUREMENT_ID');
+    </script>
+    
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "ZenFine",
+      "description": "خدمات تنظيف احترافية للعقارات في دبي",
+      "url": "{{ url('/') }}",
+      "telephone": "+971545969516",
+      "email": "info@zenfine1.com",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "المكتب 1-141-53، المملوك لـ المستثمر الأول (ش.ذ.م.م)، منخول",
+        "addressLocality": "دبي",
+        "addressCountry": "AE"
+      },
+      "serviceType": "تنظيف المنازل والمكاتب",
+      "areaServed": "دبي"
+    }
+    </script>
+    
     <title>ZenFine For Property Care</title>
       <meta name="description" content="ZenFine | خدمات تنظيف احترافية للعقارات في دبي. نظافة شاملة بأسعار تنافسية. اتصل بنا اليوم لمنزل أو مكتب لامع.">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">

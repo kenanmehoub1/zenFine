@@ -321,7 +321,10 @@ text-align:center;
       
   <div class="second" style=" direction:{{trans('home.dir')}};">
 <div class="second-img">
-<img src="{{ asset('image/new1.jpg') }}" alt="">
+<video controls width="100%" height="auto" title="فيديو خدمات التنظيف الاحترافية" loading="lazy">
+<source src="{{ asset('image/v2.mp4') }}" type="video/mp4">
+Your browser does not support the video tag.
+</video>
 </div>
     <div class="second-post"style=" direction:{{trans('home.dir')}};">
         <h2>{{trans('home.premium_cleaning_title')}}</h2>
@@ -332,7 +335,7 @@ text-align:center;
 
     <div class="second"style=" direction:{{trans('home.dir')}};">
 <div class="second-img">
-<video controls width="100%" height="auto">
+<video controls width="100%" height="auto" title="فيديو خدمات التنظيف الاحترافية" loading="lazy">
 <source src="{{ asset('image/v1.mp4') }}" type="video/mp4">
 Your browser does not support the video tag.
 </video>
@@ -348,7 +351,10 @@ Your browser does not support the video tag.
     
     <div class="second"style=" direction:{{trans('home.dir')}};">
 <div class="second-img">
-<img src="{{ asset('image/new3.jpg') }}" alt="">
+<video controls width="100%" height="auto" title="فيديو خدمات التنظيف الاحترافية" loading="lazy">
+<source src="{{ asset('image/v3.mp4') }}" type="video/mp4">
+Your browser does not support the video tag.
+</video>
 </div>
     <div class="second-post">
         <h2>{{trans('home.zenfine_excellence_title')}}</h2>
@@ -358,7 +364,10 @@ Your browser does not support the video tag.
   </div>
     <div class="second" style=" direction:{{trans('home.dir')}};">
 <div class="second-img">
-<img src="{{ asset('image/new4.jpg') }}" alt="">
+<video controls width="100%" height="auto" title="فيديو خدمات التنظيف الاحترافية" loading="lazy">
+<source src="{{ asset('image/v4.mp4') }}" type="video/mp4">
+Your browser does not support the video tag.
+</video>
 </div>
     <div class="second-post">
         <h2>{{trans('home.premium_cleaning_title')}}</h2>

@@ -88,7 +88,7 @@ return [
     'phone_number_label' => '📞 رقم الهاتف:',
     'customer_message_title' => '💬 رسالة العميل:',
     'email_footer' => 'تم إرسال هذا البريد الإلكتروني من نموذج الاتصال بموقع العميل',
-        'gallery_title' => 'معرض أعمالي',
+        'gallery_title' => 'معرض اعمالنا',
     'gallery_description' => 'تصفح بعض أعمالنا واكتشف الأداء المتميز لفريقنا المتميز، باستخدام أفضل أدوات ومواد التنظيف.',
     'contact_us_button' => 'اتصل بنا',
     'contact_us_icon' => '📞',
