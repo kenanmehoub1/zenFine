@@ -8,7 +8,7 @@
                 <a href="https://www.facebook.com/share/1QYiQUkMKv/" class="social-link-1" aria-label="{{trans('home.social_facebook')}}"><i class="fab fa-facebook-f"></i></a>
                 <a href="#" class="social-link-2" aria-label="{{trans('home.social_twitter')}}"><i class="fab fa-x"></i></a>
                 <a href="https://www.instagram.com/zenfine.fpc" class="social-link-3" aria-label="{{trans('home.social_instagram')}}"><i class="fab fa-instagram"></i></a>
-                <a href="#" class="social-link-4" aria-label="{{trans('home.social_youtube')}}"><i class="fab fa-youtube"></i></a>
+                <a href="https://youtube.com/@zenfine-fpc?si=dofi4MJ7C_E81XSq" class="social-link-4" aria-label="{{trans('home.social_youtube')}}"><i class="fab fa-youtube"></i></a>
             </div>
         </div>
         

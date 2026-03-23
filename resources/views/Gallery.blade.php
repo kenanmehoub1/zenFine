@@ -91,6 +91,26 @@ text-align:center;
     height: auto;
     aspect-ratio: 1;
 }
+.second-img iframe{
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1;
+}
+.single-video{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 30px 0;
+}
+.single-video .second-img{
+    width: 100%;
+    max-width: 920px;
+}
+.single-video .second-img iframe{
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+}
 .second-post{
     
     width: 50%;              
@@ -261,6 +281,23 @@ text-align:center;
     height: auto;
     aspect-ratio: 1;
 }
+.second-img iframe{
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1;
+}
+.single-video{
+    display: flex;
+    justify-content: center;
+    padding: 20px 0;
+}
+.single-video .second-img{
+    width: 80%;
+}
+.single-video .second-img iframe{
+    height: auto;
+    aspect-ratio: 16 / 9;
+}
 .second-post{
     
     width: 100%;  
@@ -321,10 +358,7 @@ text-align:center;
       
   <div class="second" style=" direction:{{trans('home.dir')}};">
 <div class="second-img">
-<video controls width="100%" height="auto" title="فيديو خدمات التنظيف الاحترافية" loading="lazy">
-<source src="{{ asset('image/v2.mp4') }}" type="video/mp4">
-Your browser does not support the video tag.
-</video>
+<iframe width="100%" height="auto" src="https://www.youtube.com/embed/XtMox9YApto?si=3IxtSsCUe4rV9kzg" title="فيديو خدمات التنظيف الاحترافية" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
 </div>
     <div class="second-post"style=" direction:{{trans('home.dir')}};">
         <h2>{{trans('home.premium_cleaning_title')}}</h2>
@@ -335,10 +369,7 @@ Your browser does not support the video tag.
 
     <div class="second"style=" direction:{{trans('home.dir')}};">
 <div class="second-img">
-<video controls width="100%" height="auto" title="فيديو خدمات التنظيف الاحترافية" loading="lazy">
-<source src="{{ asset('image/v1.mp4') }}" type="video/mp4">
-Your browser does not support the video tag.
-</video>
+<iframe width="100%" height="auto" src="https://www.youtube.com/embed/Ot3btzkrLVU?si=TmwGr-tjeieSJ9bO" title="فيديو خدمات التنظيف الاحترافية" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
 </div>
     <div class="second-post">
         <h2>{{trans('home.professional_home_cleaning_title')}}</h2>
@@ -351,10 +382,7 @@ Your browser does not support the video tag.
     
     <div class="second"style=" direction:{{trans('home.dir')}};">
 <div class="second-img">
-<video controls width="100%" height="auto" title="فيديو خدمات التنظيف الاحترافية" loading="lazy">
-<source src="{{ asset('image/v3.mp4') }}" type="video/mp4">
-Your browser does not support the video tag.
-</video>
+<iframe width="100%" height="auto" src="https://www.youtube.com/embed/0oChdlYyl3E" title="فيديو خدمات التنظيف الاحترافية" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
 </div>
     <div class="second-post">
         <h2>{{trans('home.zenfine_excellence_title')}}</h2>
@@ -364,10 +392,7 @@ Your browser does not support the video tag.
   </div>
     <div class="second" style=" direction:{{trans('home.dir')}};">
 <div class="second-img">
-<video controls width="100%" height="auto" title="فيديو خدمات التنظيف الاحترافية" loading="lazy">
-<source src="{{ asset('image/v4.mp4') }}" type="video/mp4">
-Your browser does not support the video tag.
-</video>
+<iframe width="100%" height="auto" src="https://www.youtube.com/embed/pnFnvSMa1Fw" title="فيديو خدمات التنظيف الاحترافية" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
 </div>
     <div class="second-post">
         <h2>{{trans('home.premium_cleaning_title')}}</h2>
@@ -376,6 +401,36 @@ Your browser does not support the video tag.
             <span class="icon">{{trans('home.contact_us_icon')}}</span> {{trans('home.contact_us_button')}}
         </a>
     </div>
+  </div>
+    
+    <div class="single-video" style=" direction:{{trans('home.dir')}};">
+<div class="second-img">
+<iframe width="100%" height="auto" src="https://www.youtube.com/embed/drnucwceIgs" title="فيديو خدمات التنظيف الاحترافية" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+</div>
+  </div>
+    
+    <div class="single-video" style=" direction:{{trans('home.dir')}};">
+<div class="second-img">
+<iframe width="100%" height="auto" src="https://www.youtube.com/embed/kHDKNNQm_cs" title="فيديو خدمات التنظيف الاحترافية" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+</div>
+  </div>
+    
+    <div class="single-video" style=" direction:{{trans('home.dir')}};">
+<div class="second-img">
+<iframe width="100%" height="auto" src="https://www.youtube.com/embed/Ot3btzkrLVU" title="فيديو خدمات التنظيف الاحترافية" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+</div>
+  </div>
+    
+    <div class="single-video" style=" direction:{{trans('home.dir')}};">
+<div class="second-img">
+<iframe width="100%" height="auto" src="https://www.youtube.com/embed/XtMox9YApto" title="فيديو خدمات التنظيف الاحترافية" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+</div>
+  </div>
+    
+    <div class="single-video" style=" direction:{{trans('home.dir')}}; ">
+<div class="second-img">
+<iframe width="100%" height="auto" src="https://www.youtube.com/embed/fPq0XufN-rA" title="فيديو خدمات التنظيف الاحترافية" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+</div>
   </div>
        
 

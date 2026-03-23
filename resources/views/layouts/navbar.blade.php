@@ -4,7 +4,7 @@
                 <a href="https://www.facebook.com/share/1QYiQUkMKv/" class="social-link-n" aria-label="{{trans('home.social_facebook')}}"><i class="fab fa-facebook-f"></i></a>
                 <a href="#" class="social-link-n" aria-label="{{trans('home.social_twitter')}}"><i class="fab fa-x"></i></a>
                 <a href="https://www.instagram.com/zenfine.fpc" class="social-link-n" aria-label="{{trans('home.social_instagram')}}"><i class="fab fa-instagram"></i></a>
-                <a href="#" class="social-link-n" aria-label="{{trans('home.social_youtube')}}"><i class="fab fa-youtube"></i></a>
+                <a href="https://youtube.com/@zenfine-fpc?si=dofi4MJ7C_E81XSq" class="social-link-n" aria-label="{{trans('home.social_youtube')}}"><i class="fab fa-youtube"></i></a>
             </div></div>
      <div class='phone' style="margin-left:20px;"> 
         <p>{{trans('home.Payment')}} : <span style="font-size:1.5rem;"><i class="fa-brands fa-cc-mastercard" style="color: #eb001b;"></i>

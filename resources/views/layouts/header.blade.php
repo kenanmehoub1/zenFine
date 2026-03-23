@@ -52,6 +52,102 @@
     }
     </script>
     
+    <!-- Schema for Videos -->
+    <script type="application/ld+json">
+    [
+      {
+        "@context": "https://schema.org",
+        "@type": "VideoObject",
+        "name": "فيديو خدمات التنظيف 1",
+        "description": "شاهد خدمات التنظيف الاحترافية من ZenFine",
+        "thumbnailUrl": "https://img.youtube.com/vi/8iP1BtgEhgE/maxresdefault.jpg",
+        "uploadDate": "2024-03-24",
+        "duration": "PT30S",
+        "embedUrl": "https://www.youtube.com/embed/8iP1BtgEhgE?si=Ntar3LW1z96IvXSb"
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "VideoObject",
+        "name": "فيديو خدمات التنظيف 2",
+        "description": "شاهد خدمات التنظيف الاحترافية من ZenFine",
+        "thumbnailUrl": "https://img.youtube.com/vi/2GK8magETv0/maxresdefault.jpg",
+        "uploadDate": "2024-03-24",
+        "duration": "PT30S",
+        "embedUrl": "https://www.youtube.com/embed/2GK8magETv0?si=XH5H7x7FuCCqo-Zv"
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "VideoObject",
+        "name": "فيديو خدمات التنظيف 3",
+        "description": "شاهد خدمات التنظيف الاحترافية من ZenFine",
+        "thumbnailUrl": "https://img.youtube.com/vi/0oChdlYyl3E/maxresdefault.jpg",
+        "uploadDate": "2024-03-24",
+        "duration": "PT30S",
+        "embedUrl": "https://www.youtube.com/embed/0oChdlYyl3E"
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "VideoObject",
+        "name": "فيديو خدمات التنظيف 4",
+        "description": "شاهد خدمات التنظيف الاحترافية من ZenFine",
+        "thumbnailUrl": "https://img.youtube.com/vi/pnFnvSMa1Fw/maxresdefault.jpg",
+        "uploadDate": "2024-03-24",
+        "duration": "PT30S",
+        "embedUrl": "https://www.youtube.com/embed/pnFnvSMa1Fw"
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "VideoObject",
+        "name": "فيديو خدمات التنظيف 5",
+        "description": "شاهد خدمات التنظيف الاحترافية من ZenFine",
+        "thumbnailUrl": "https://img.youtube.com/vi/drnucwceIgs/maxresdefault.jpg",
+        "uploadDate": "2024-03-24",
+        "duration": "PT30S",
+        "embedUrl": "https://www.youtube.com/embed/drnucwceIgs"
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "VideoObject",
+        "name": "فيديو خدمات التنظيف 6",
+        "description": "شاهد خدمات التنظيف الاحترافية من ZenFine",
+        "thumbnailUrl": "https://img.youtube.com/vi/kHDKNNQm_cs/maxresdefault.jpg",
+        "uploadDate": "2024-03-24",
+        "duration": "PT30S",
+        "embedUrl": "https://www.youtube.com/embed/kHDKNNQm_cs"
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "VideoObject",
+        "name": "فيديو خدمات التنظيف 7",
+        "description": "شاهد خدمات التنظيف الاحترافية من ZenFine",
+        "thumbnailUrl": "https://img.youtube.com/vi/Ot3btzkrLVU/maxresdefault.jpg",
+        "uploadDate": "2024-03-24",
+        "duration": "PT30S",
+        "embedUrl": "https://www.youtube.com/embed/Ot3btzkrLVU"
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "VideoObject",
+        "name": "فيديو خدمات التنظيف 8",
+        "description": "شاهد خدمات التنظيف الاحترافية من ZenFine",
+        "thumbnailUrl": "https://img.youtube.com/vi/XtMox9YApto/maxresdefault.jpg",
+        "uploadDate": "2024-03-24",
+        "duration": "PT30S",
+        "embedUrl": "https://www.youtube.com/embed/XtMox9YApto"
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "VideoObject",
+        "name": "فيديو خدمات التنظيف 9",
+        "description": "شاهد خدمات التنظيف الاحترافية من ZenFine",
+        "thumbnailUrl": "https://img.youtube.com/vi/fPq0XufN-rA/maxresdefault.jpg",
+        "uploadDate": "2024-03-24",
+        "duration": "PT30S",
+        "embedUrl": "https://www.youtube.com/embed/fPq0XufN-rA"
+      }
+    ]
+    </script>
+    
     <title>ZenFine For Property Care</title>
       <meta name="description" content="ZenFine | خدمات تنظيف احترافية للعقارات في دبي. نظافة شاملة بأسعار تنافسية. اتصل بنا اليوم لمنزل أو مكتب لامع.">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
