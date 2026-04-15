@@ -9,7 +9,7 @@
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="{{ url()->current() }}">
     <link rel="sitemap" type="application/xml" href="{{ url('sitemap.xml') }}">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icons/7.2.3/css/flag-icons.min.css">
+
     <!-- Open Graph لـ Facebook -->
     <meta property="og:title" content="ZenFine For Property Care">
     <meta property="og:description" content="خدمات تنظيف احترافية للعقارات في دبي">
@@ -151,6 +151,7 @@
     <title>ZenFine For Property Care</title>
       <meta name="description" content="ZenFine | خدمات تنظيف احترافية للعقارات في دبي. نظافة شاملة بأسعار تنافسية. اتصل بنا اليوم لمنزل أو مكتب لامع.">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icons/7.2.3/css/flag-icons.min.css">
     <style>
         * {
             margin: 0;
