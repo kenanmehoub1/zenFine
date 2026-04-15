@@ -202,10 +202,10 @@
         }
         
         .logo{
-            width: 100px;
-            height: 80px;
+            width: 80px !important;
+            height: 80px !important;
             margin-left: 2rem;
-             margin-top: 7px;
+             margin-top: 7px !important;
         }
         
         .logo1{
@@ -835,8 +835,8 @@ background-position: center center;
             
             .logo1{
                 display: block;
-                width: 80px;
-                height: 75px;
+                width: 80px  !important ;
+                height: 75px !important;
                 margin-left:2rem;
             }
 
@@ -1002,8 +1002,8 @@ background-position: center center;
             
             .logo1{
                 display: block;
-                width: 80px;
-                height: 75px;
+                width: 80px !important;
+                height: 75px !important;
                 margin-left:2rem;
             }
 
