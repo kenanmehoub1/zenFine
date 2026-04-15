@@ -9,7 +9,7 @@
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="{{ url()->current() }}">
     <link rel="sitemap" type="application/xml" href="{{ url('sitemap.xml') }}">
-    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icons/7.2.3/css/flag-icons.min.css">
     <!-- Open Graph لـ Facebook -->
     <meta property="og:title" content="ZenFine For Property Care">
     <meta property="og:description" content="خدمات تنظيف احترافية للعقارات في دبي">
@@ -160,7 +160,7 @@
         }
         
         body {
-           background: #EAEAEA;
+            background: #EAEAEA;
             color: #3D523B;
             line-height: 1.6;
         }
@@ -170,7 +170,6 @@
              margin:0;
              border:none;
              border-radius: 4px;  
-             border-radius: 4px;
              display: flex;
              flex-direction: column;
         }
@@ -197,15 +196,15 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background:white;
-            
-        }   
+            background: white;
+            color: #3D523B;
+        }
         
         .logo{
-            width: 120px;
+            width: 100px;
             height: 80px;
             margin-left: 2rem;
-             margin-top: 1px;
+             margin-top: 7px;
         }
         
         .logo1{
@@ -223,7 +222,7 @@
         }     
         
         .nav a{
-            color:  #568B3E;
+            color: #568B3E;
             text-decoration: none;
         }
         
@@ -320,6 +319,7 @@
         
         .search-input::placeholder {
             color: #3D523B;
+            opacity: 0.7;
         }
         
         .search-close {
@@ -430,9 +430,7 @@
         }
              
         .content{
-          
-                  background: linear-gradient(#adc0e789, #bfe7adff);
-
+            background: linear-gradient(#adc0e789, #bfe7adff);
         }
         
         .one{
@@ -836,7 +834,7 @@ background-position: center center;
             
             .logo1{
                 display: block;
-                width: 100px;
+                width: 80px;
                 height: 75px;
                 margin-left:2rem;
             }
@@ -1003,7 +1001,7 @@ background-position: center center;
             
             .logo1{
                 display: block;
-                width: 100px;
+                width: 80px;
                 height: 75px;
                 margin-left:2rem;
             }
