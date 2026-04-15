@@ -55,7 +55,41 @@
  <button class="btn-header" onclick="btnHeader()">
      <i class="fas fa-bars"></i>
  </button>
+ 
  <style>
+    /* حل جذري لخلفية الأزرار السوداء */
+.header .nav a,
+.header .nav .nav-1,
+.header .nav li a,
+.dropdown-toggle,
+.dropdown-item,
+.lang-btn,
+.search-toggle {
+    background: transparent !important;
+    background-color: transparent !important;
+}
+
+/* إعادة تعيين الألوان الصحيحة */
+.nav-1,
+.nav a,
+.dropdown-toggle,
+.lang-btn,
+.search-toggle {
+    background-color: transparent !important;
+    color: #568B3E !important;
+}
+
+/* تأكيد أن زر z يبقى كما هو */
+.z {
+    background: #568B3E !important;
+    background-color: #568B3E !important;
+}
+
+/* للجوال */
+.btn-header {
+    background: #5F8987 !important;
+    background-color: #5F8987 !important;
+}
        
  /* تنسيقات القائمة المنسدلة */
  .dropdown {
@@ -112,11 +146,13 @@
      background-color: #f5f5f5;
      color: #86BE41;
  }
+ 
  @media (min-width: 1066px) {
- .dropdown {
-     margin-top: -10px;
+     .dropdown {
+         margin-top: -10px;
+     }
  }
-}
+ 
  /* تحسينات للجوال */
  @media (max-width: 1065px) {
      .nav li{
@@ -134,7 +170,6 @@
          padding-left: 20px;
          display: none;
      }
-
      
      .dropdown.active .dropdown-menu {
          display: block;
@@ -144,125 +179,52 @@
          transform: rotate(180deg);
      }
  }
-     
-     .theme-toggle {
-         border: none;
-         background: transparent;
-         color: inherit;
-         cursor: pointer;
-         margin-left: 12px;
-         padding: 6px;
-         font-size: 1.1rem;
-         transition: color 0.2s ease, transform 0.2s ease;
-     }
-     .theme-toggle:hover {
-         color: #86BE41;
-         transform: scale(1.05);
-     }
-     .dark-theme {
-         --page-bg: #121212;
-         --page-color: #f5f5f5;
-         --panel-bg: #1d1d1d;
-         --panel-border: #333;
-     }
-     body.dark-theme {
-         background-color: var(--page-bg);
-         color: var(--page-color);
-     }
-     body.dark-theme .content-header,
-     body.dark-theme .nav li a,
-     body.dark-theme .dropdown-menu {
-         background-color: var(--panel-bg);
-         color: var(--page-color);
-         border-color: var(--panel-border);
-     }
-     body.dark-theme .nav li a,
-     body.dark-theme .nav-1,
-     body.dark-theme .dropdown-item {
-         color: #e8e8e8;
-     }
-     body.dark-theme .search-input,
-     body.dark-theme .dropdown-menu {
-         background: #2b2b2b;
-         color: #f0f0f0;
-     }
-     
-   </style>
+   
+ </style>
+
  <script>
 document.addEventListener('DOMContentLoaded', function() {
- // الحصول على جميع القوائم المنسدلة وأزرار التبديل
- const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
- const dropdowns = document.querySelectorAll('.dropdown');
- 
- // إضافة حدث النقر لكل زر تبديل
- dropdownToggles.forEach((toggle, index) => {
-     toggle.addEventListener('click', function(e) {
-         if (window.innerWidth <= 1066) {
-             e.preventDefault();
-             // تبديل حالة القائمة المنسدلة المقابلة
-             dropdowns[index].classList.toggle('active');
-             
-             // إغلاق القوائم الأخرى إذا كانت مفتوحة
-             dropdowns.forEach((dropdown, i) => {
-                 if (i !== index && dropdown.classList.contains('active')) {
-                     dropdown.classList.remove('active');
-                 }
-             });
-         }
-     });
- });
- 
- // إغلاق القائمة المنسدلة عند النقر خارجها (للجوال)
- document.addEventListener('click', function(e) {
-     if (window.innerWidth <= 1066) {
-         let clickedInsideDropdown = false;
-         
-         // التحقق إذا كان النقر داخل أي قائمة منسدلة
-         dropdowns.forEach((dropdown) => {
-             if (dropdown.contains(e.target)) {
-                 clickedInsideDropdown = true;
-             }
-         });
-         
-         // إذا لم يكن النقر داخل قائمة منسدلة، أغلق جميع القوائم
-         if (!clickedInsideDropdown) {
-             dropdowns.forEach((dropdown) => {
-                 dropdown.classList.remove('active');
-             });
-         }
-     }
- });
-
- // وضعية النهاري/الليلي
- const themeToggleBtn = document.getElementById('theme-toggle-btn');
- const currentTheme = localStorage.getItem('site-theme');
-
- function applyTheme(theme) {
-     if (theme === 'dark') {
-         document.body.classList.add('dark-theme');
-         themeToggleBtn.innerHTML = '<i class="fas fa-sun"></i>';
-         themeToggleBtn.title = 'انتقال إلى النهاري';
-     } else {
-         document.body.classList.remove('dark-theme');
-         themeToggleBtn.innerHTML = '<i class="fas fa-moon"></i>';
-         themeToggleBtn.title = 'انتقال إلى الليلي';
-     }
-     localStorage.setItem('site-theme', theme);
- }
-
- if (currentTheme === 'dark') {
-     applyTheme('dark');
- } else if (currentTheme === 'light') {
-     applyTheme('light');
- } else {
-     // افتراضي على وضع الجهاز
-     const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-     applyTheme(prefersDark ? 'dark' : 'light');
- }
-
- themeToggleBtn.addEventListener('click', function() {
-     const isDark = document.body.classList.contains('dark-theme');
-     applyTheme(isDark ? 'light' : 'dark');
- });
+    // الحصول على جميع القوائم المنسدلة وأزرار التبديل
+    const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
+    const dropdowns = document.querySelectorAll('.dropdown');
+    
+    // إضافة حدث النقر لكل زر تبديل
+    dropdownToggles.forEach((toggle, index) => {
+        toggle.addEventListener('click', function(e) {
+            if (window.innerWidth <= 1066) {
+                e.preventDefault();
+                // تبديل حالة القائمة المنسدلة المقابلة
+                dropdowns[index].classList.toggle('active');
+                
+                // إغلاق القوائم الأخرى إذا كانت مفتوحة
+                dropdowns.forEach((dropdown, i) => {
+                    if (i !== index && dropdown.classList.contains('active')) {
+                        dropdown.classList.remove('active');
+                    }
+                });
+            }
+        });
+    });
+    
+    // إغلاق القائمة المنسدلة عند النقر خارجها (للجوال)
+    document.addEventListener('click', function(e) {
+        if (window.innerWidth <= 1066) {
+            let clickedInsideDropdown = false;
+            
+            // التحقق إذا كان النقر داخل أي قائمة منسدلة
+            dropdowns.forEach((dropdown) => {
+                if (dropdown.contains(e.target)) {
+                    clickedInsideDropdown = true;
+                }
+            });
+            
+            // إذا لم يكن النقر داخل قائمة منسدلة، أغلق جميع القوائم
+            if (!clickedInsideDropdown) {
+                dropdowns.forEach((dropdown) => {
+                    dropdown.classList.remove('active');
+                });
+            }
+        }
+    });
 });
 </script>
