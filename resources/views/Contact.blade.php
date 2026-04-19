@@ -34,7 +34,7 @@
                       
                     </div>
                 @endif
-            <form method="POST" action="{{ route('contact') }}">
+            <form method="POST" action="{{ route('contact.submit') }}">
                 @csrf
                 <div class="form-group">
                     <label for="fullName">{{trans('home.full_name')}}</label>

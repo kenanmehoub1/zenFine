@@ -33,7 +33,7 @@
                         {{trans('home.about_description')}}
                     </p>
                     <div class="cta-buttons" style="display: flex; gap: 20px; flex-wrap: wrap;">
-                        <a href="{{ route('contact') }}" style="display: inline-block; background-color: #3EA997; color: white; 
+                        <a href="{{ route('contact.page') }}" style="display: inline-block; background-color: #3EA997; color: white; 
                             padding: 15px 40px; border-radius: 50px; text-decoration: none; font-weight: bold; 
                             font-size: 1.1rem; transition: all 0.3s ease; border: 2px solid #3EA997;">
                             {{trans('home.contact')}}
@@ -210,7 +210,7 @@
                 <p style="color: #444; line-height: 1.8; font-size: 1.1rem; max-width: 700px; margin: 0 auto 40px;">
                     {{trans('home.cta_text')}}
                 </p>
-                <a href="{{ route('contact') }}" style="display: inline-block; background-color: #3EA997; color: white; 
+                <a href="{{ route('contact.page') }}" style="display: inline-block; background-color: #3EA997; color: white; 
                     padding: 18px 50px; border-radius: 50px; text-decoration: none; font-weight: bold; 
                     font-size: 1.2rem; transition: all 0.3s ease; box-shadow: 0 5px 15px rgba(62, 169, 151, 0.3);">
                     {{trans('home.contact_title')}}
