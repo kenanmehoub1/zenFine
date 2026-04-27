@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Barryvdh\DomPDF\Facade\Pdf;
 use Carbon\Carbon;
 
+
 class InvoiceController extends Controller
 {
     private $secretToken = 'Zenfine2026Secret!@';
@@ -29,35 +30,29 @@ class InvoiceController extends Controller
     {
         $this->checkAuth($request);
 
-        $invoiceDate = $request->invoice_date;
-        if (is_string($invoiceDate) && $invoiceDate !== '') {
-            try {
-                $invoiceDate = Carbon::parse($invoiceDate)->toDateTimeString();
-            } catch (\Exception $e) {
-                try {
-                    $invoiceDate = Carbon::createFromFormat('d/m/Y H:i:s', $request->invoice_date)->toDateTimeString();
-                } catch (\Exception $e2) {
-                    $invoiceDate = null;
-                }
-            }
-        }
+        // الحصول على آخر رقم فاتورة مضاف
+    $lastInvoice = Invoice::orderBy('id', 'desc')->first();
+    
+      if ($lastInvoice && $lastInvoice->invoice_number) {
+        // تحويل رقم الفاتورة إلى عدد صحيح ثم إضافة 1
+        $lastNumber = (int)$lastInvoice->invoice_number;  // تحويل النص إلى رقم
+        $invoiceNumber = $lastNumber + 1;
+    } else {
+        // أول فاتورة تبدأ برقم 1
+        $invoiceNumber = 1;
+    }
+        // التاريخ أوتوماتيكي
+        $invoiceDate = Carbon::now()->toDateTimeString();
         
         $invoice = Invoice::create([
-            'invoice_number' => $request->invoice_number,
+             'invoice_number' => (string)$invoiceNumber,  // تحويل إلى نص للتخزين
             'invoice_date' => $invoiceDate,
             'company_name' => $request->company_name,
             'mobile_no' => $request->mobile_no,
-            'user_code' => $request->user_code,
-            'user_name' => $request->user_name,
-            'fees' => $request->fees,
-            'transaction_type' => $request->transaction_type,
-            'no_of_person' => $request->no_of_person,
-            'no_of_transa' => $request->no_of_transa,
-            'typing_fees' => $request->typing_fees,
-            'transaction_no' => $request->transaction_no,
-            'transaction_fees' => $request->transaction_fees,
-            'other_fees' => $request->other_fees,
-            'vat_fees' => $request->vat_fees,
+            'service_type' => $request->service_type,
+            'service_details' => $request->service_details,
+            'service_quantity' => $request->service_quantity,
+            'service_price' => $request->service_price,
             'total_fees' => $request->total_fees,
         ]);
         
@@ -72,14 +67,30 @@ class InvoiceController extends Controller
         return view('admin.invoice-view', compact('invoice'));
     }
     
-    // تحويل الفاتورة إلى PDF
-    public function downloadPDF($id, Request $request)
-    {
-        $this->checkAuth($request);
-        $invoice = Invoice::findOrFail($id);
-        $pdf = Pdf::loadView('admin.invoice-pdf', compact('invoice'));
-        return $pdf->download('invoice-'.$invoice->invoice_number.'.pdf');
-    }
+  
+
+// تحويل الفاتورة إلى PDF مع دعم العربية البسيط
+public function downloadPDF($id, Request $request)
+{
+    $this->checkAuth($request);
+    $invoice = Invoice::findOrFail($id);
+    
+    // تحميل الـ view وتحويله إلى HTML
+    $pdf = Pdf::loadView('admin.invoice-pdf', compact('invoice'));
+    
+    // إعدادات مهمة للعربية
+    $pdf->setOptions([
+        'isHtml5ParserEnabled' => true,
+        'isRemoteEnabled' => true,
+        'isPhpEnabled' => true,
+        'defaultFont' => 'DejaVu Sans'
+    ]);
+    
+    // إضافة اتجاه RTL للصفحة
+    $pdf->setPaper('A4', 'portrait');
+    
+    return $pdf->download('invoice-'.$invoice->invoice_number.'.pdf');
+}
     
     // البحث عن الفواتير القديمة
     public function search(Request $request)
@@ -104,4 +115,17 @@ class InvoiceController extends Controller
         
         return view('admin.old-invoices', compact('invoices'));
     }
+    
+  // حذف فاتورة
+public function destroy($id, Request $request)
+{
+    $this->checkAuth($request);
+    
+    $invoice = Invoice::findOrFail($id);
+    $invoice->delete();
+    
+    // العودة إلى صفحة الفواتير القديمة مع رسالة نجاح
+    return redirect()->route('invoices.search', ['token' => $request->query('token')])
+                     ->with('success', 'Invoice deleted successfully!');
+}
 }

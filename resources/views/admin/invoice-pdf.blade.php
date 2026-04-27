@@ -1,74 +1,104 @@
 <!DOCTYPE html>
-<html dir="rtl">
+<html>
 <head>
     <meta charset="UTF-8">
-    <title>فاتورة {{ $invoice->invoice_number }}</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Invoice {{ $invoice->invoice_number }}</title>
     <style>
         body {
-            font-family: DejaVu Sans, sans-serif;
+            font-family: 'DejaVu Sans', 'Arial', sans-serif;
+            font-size: 14px;
+            direction: rtl;
+            text-align: right;
             padding: 20px;
         }
+        
         .invoice-box {
             border: 2px solid #ddd;
-            padding: 20px;
+            padding: 30px;
             border-radius: 10px;
         }
-        .header {
+        
+        .text-center {
             text-align: center;
-            margin-bottom: 30px;
         }
-        .logo {
-            max-width: 150px;
+        
+        h2, h4 {
+            text-align: center;
         }
+        
         table {
             width: 100%;
             border-collapse: collapse;
             margin: 15px 0;
         }
+        
         th, td {
             border: 1px solid #ddd;
             padding: 10px;
             text-align: center;
         }
+        
         th {
+            background-color: #f0f0f0;
+        }
+        
+        .total-row {
             background: #f0f0f0;
+            font-weight: bold;
+        }
+        
+        .footer {
+            margin-top: 30px;
+            text-align: center;
+            font-size: 12px;
+            color: #666;
         }
     </style>
 </head>
 <body>
     <div class="invoice-box">
-        <div class="header">
-            <img src="{{ public_path('image/zenfine-logo.jpg') }}" class="logo">
+        <div class="text-center">
             <h2>ZENFINE PROPERTY CARE</h2>
-            <h3>INVOICE / فاتورة</h3>
+            <h4>INVOICE</h4>
         </div>
 
-        <div style="margin: 20px 0;">
-            <p><strong>Invoice No.:</strong> {{ $invoice->invoice_number }}</p>
-            <p><strong>Invoice Date:</strong> {{ $invoice->invoice_date }}</p>
-            <p><strong>Company Name:</strong> {{ $invoice->company_name }}</p>
-            <p><strong>Mobile No.:</strong> {{ $invoice->mobile_no }}</p>
-            <p><strong>User Code:</strong> {{ $invoice->user_code }} ({{ $invoice->user_name }})</p>
-        </div>
+        <p><strong>Invoice Number:</strong> {{ $invoice->invoice_number }}</p>
+        <p><strong>Invoice Date:</strong> {{ $invoice->invoice_date }}</p>
+        <p><strong>Company/Customer Name:</strong> {{ $invoice->company_name }}</p>
+        <p><strong>Mobile Number:</strong> {{ $invoice->mobile_no }}</p>
 
+        <h5>Service Details</h5>
+        
         <table>
             <thead>
-                <tr><th>Fees</th><th>Transaction Type</th><th>No Of Person</th><th>No Of Transa</th><th>Typing Fees</th></tr>
+                <tr>
+                    <th>Service Type</th>
+                    <th>Service Details</th>
+                    <th>Quantity</th>
+                    <th>Price</th>
+                </tr>
             </thead>
             <tbody>
-                <tr><td>{{ $invoice->fees }}</td><td>{{ $invoice->transaction_type }}</td><td>{{ $invoice->no_of_person }}</td><td>{{ $invoice->no_of_transa }}</td><td>{{ $invoice->typing_fees }}</td></tr>
+                <tr>
+                    <td>{{ $invoice->service_type ?: '—' }}</td>
+                    <td>{{ $invoice->service_details ?: '—' }}</td>
+                    <td>{{ $invoice->service_quantity ?: '1' }}</td>
+                    <td>{{ number_format($invoice->service_price, 2) }} SAR</td>
+                </tr>
             </tbody>
         </table>
 
-        <p><strong>Transaction(s) No.:</strong> {{ $invoice->transaction_no }}</p>
-
         <table>
-            <tr><th>Transaction Fees</th><td>{{ $invoice->transaction_fees }}</td></tr>
-            <tr><th>Typing Fees</th><td>{{ $invoice->typing_fees }}</td></tr>
-            <tr><th>Other Fees</th><td>{{ $invoice->other_fees }}</td></tr>
-            <tr><th>Vat Fees</th><td>{{ $invoice->vat_fees }}</td></tr>
-            <tr style="background:#f0f0f0"><th>Total Fees</th><td>{{ $invoice->total_fees }}</td></tr>
+            <tr>
+                <th style="width: 30%">Total Amount</th>
+                <td style="width: 70%"><strong>{{ number_format($invoice->total_fees, 2) }} SAR</strong></td>
+            </tr>
         </table>
+        
+        <div class="footer">
+            <p>Thank you for trusting us | Zenfine Property Care</p>
+        </div>
     </div>
 </body>
 </html>

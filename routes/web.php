@@ -88,4 +88,5 @@ Route::prefix('admin')->group(function () {
     Route::get('/invoices/search', [InvoiceController::class, 'search'])->name('invoices.search');
     Route::get('/invoices/{id}', [InvoiceController::class, 'show'])->name('invoices.show');
     Route::get('/invoices/{id}/pdf', [InvoiceController::class, 'downloadPDF'])->name('invoices.pdf');
+    Route::delete('/invoices/{id}', [InvoiceController::class, 'destroy'])->name('invoices.destroy');
 });

@@ -2,35 +2,44 @@
     <table class="table table-bordered table-hover">
         <thead class="table-dark">
             <tr>
-                <th>#</th>
-                <th>رقم الفاتورة</th>
-                <th>الشركة</th>
-                <th>التاريخ</th>
-                <th>المجموع</th>
-                <th>الإجراءات</th>
+                <th>Invoice Number</th>
+                <th>Company Name</th>
+                <th>Date</th>
+                <th>Total</th>
+                <th>Actions</th>
             </tr>
         </thead>
         <tbody>
             @forelse($invoices as $invoice)
             <tr>
-                <td>{{ $loop->iteration }}</td>
                 <td>{{ $invoice->invoice_number }}</td>
                 <td>{{ $invoice->company_name }}</td>
                 <td>{{ $invoice->invoice_date }}</td>
-                <td>{{ $invoice->total_fees }} ريال</td>
+                <td>{{ $invoice->total_fees }} SAR</td>
                 <td>
                     <a href="{{ route('invoices.show', ['id' => $invoice->id, 'token' => request('token')]) }}" class="btn btn-sm btn-info">
-                        <i class="fas fa-eye"></i> عرض
+                        <i class="fas fa-eye"></i> View
                     </a>
                     <a href="{{ route('invoices.pdf', ['id' => $invoice->id, 'token' => request('token')]) }}" class="btn btn-sm btn-danger">
                         <i class="fas fa-file-pdf"></i> PDF
                     </a>
-                </td>
-            </tr>
+                    
+                    <form action="{{ route('invoices.destroy', ['id' => $invoice->id, 'token' => request('token')]) }}" 
+                          method="POST" 
+                          style="display: inline-block;"
+                          onsubmit="return confirm('Are you sure you want to delete this invoice?');">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" class="btn btn-sm btn-warning">
+                            <i class="fas fa-trash"></i> Delete
+                        </button>
+                    </form>
+                 </td>
+             </tr>
             @empty
-            <tr>
-                <td colspan="6" class="text-center">لا توجد فواتير</td>
-            </tr>
+             <tr>
+                <td colspan="5" class="text-center">No invoices found</td>
+             </tr>
             @endforelse
         </tbody>
     </table>
