@@ -8,38 +8,67 @@
     <div class="card-body">
         <form id="invoiceForm">
             @csrf
+
+            <h5 class="mt-2 mb-3">Customer Information</h5>
             <div class="row">
-                <div class="col-md-6 mb-3">
-                    <label>Company or Customer Name <span class="text-danger">*</span></label>
-                    <input type="text" name="company_name" class="form-control" required>
+                <div class="col-md-4 mb-3">
+                    <label>The Customer Name / اسم العميل</label>
+                    <input type="text" name="company_name" class="form-control">
                 </div>
-                <div class="col-md-6 mb-3">
-                    <label>Mobile Number <span class="text-danger">*</span></label>
-                    <input type="text" name="mobile_no" class="form-control" required>
+                <div class="col-md-4 mb-3">
+                    <label>The Customer Mobile / رقم العميل</label>
+                    <input type="text" name="mobile_no" class="form-control">
+                </div>
+                <div class="col-md-4 mb-3">
+                    <label>The Customer TRN/رقم التسجيل الضريبي للعميل</label>
+                    <input type="text" name="customer_trn" class="form-control">
                 </div>
             </div>
 
-            <h5 class="mt-4">Service Details</h5>
+            <h5 class="mt-4 mb-3">Transaction Details</h5>
             <div class="row">
-                <div class="col-md-6 mb-3">
-                    <label>Service Type <span class="text-danger">*</span></label>
-                    <input type="text" name="service_type" class="form-control" required>
-                </div>
-                <div class="col-md-6 mb-3">
-                    <label>Service Details <span class="text-danger">*</span></label>
-                    <textarea name="service_details" class="form-control" rows="2" required></textarea>
+                <div class="col-md-4 mb-3">
+                    <label>Type of transactions / نوع المعاملة</label>
+                    <input type="text" name="transaction_type" class="form-control amount">
                 </div>
                 <div class="col-md-4 mb-3">
-                    <label>Service Quantity <span class="text-danger">*</span></label>
-                    <input type="number" name="service_quantity" class="form-control service_quantity" value="1" min="1" required>
+                    <label>The amount / المبلغ</label>
+                    <input type="number" name="amount" class="form-control amount" value="" step="0.01">
                 </div>
                 <div class="col-md-4 mb-3">
-                    <label>Service Price <span class="text-danger">*</span></label>
-                    <input type="number" name="service_price" class="form-control service_price" value="0" step="0.01" required>
+                    <label>Number of transactions / عدد المعاملات</label>
+                    <input type="number" name="number_of_transactions" class="form-control number_of_transactions" value="">
                 </div>
                 <div class="col-md-4 mb-3">
-                    <label>Total <span class="text-danger">*</span></label>
-                    <input type="number" name="total_fees" class="form-control total_fees" value="0" readonly style="background:#e9ecef">
+                    <label>Service fees / رسوم الخدمة</label>
+                    <input type="number" name="service_fees" class="form-control service_fees" value="" step="0.01">
+                </div>
+                <div class="col-md-4 mb-3">
+                    <label>Government fees / رسوم حكومية</label>
+                    <input type="number" name="government_fees" class="form-control government_fees" value="" step="0.01">
+                </div>
+            </div>
+
+            <h5 class="mt-4 mb-3">Payment Summary</h5>
+            <div class="row">
+                <div class="col-md-4 mb-3">
+                    <label>To Cashier Payment / دفعة إلى أمين الصندوق</label>
+                    <input type="number" name="cashier_payment" class="form-control cashier_payment" value="" step="0.01">
+                </div>
+                <div class="col-md-4 mb-3">
+                    <label>Payment Type / نوع الدفع</label>
+                    <input type="text" name="payment_type" class="form-control">
+                </div>
+                <div class="col-md-4 mb-3">
+                    <label>User / المستخدم</label>
+                    <input type="text" name="user_name" class="form-control">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-4 mb-3">
+                    <label>Total Amount / الإجمالي</label>
+                    <input type="number" name="total_fees" class="form-control total_fees" value="" step="0.01">
                 </div>
             </div>
 
@@ -58,18 +87,19 @@
 $(document).ready(function() {
     // Calculate total automatically
     function calculateTotal() {
-        let quantity = parseFloat($('.service_quantity').val()) || 0;
-        let price = parseFloat($('.service_price').val()) || 0;
-        let total = quantity * price;
+        let amount = parseFloat($('.amount').val()) || 0;
+        let serviceFees = parseFloat($('.service_fees').val()) || 0;
+        let govFees = parseFloat($('.government_fees').val()) || 0;
+        let total = amount + serviceFees + govFees;
         $('.total_fees').val(total);
     }
-    
-    $('.service_quantity, .service_price').on('keyup change', calculateTotal);
-    
+
+    $('.amount, .service_fees, .government_fees').on('keyup change', calculateTotal);
+
     $('#invoiceForm').on('submit', function(e) {
         e.preventDefault();
         let token = new URLSearchParams(window.location.search).get('token');
-        
+
         $.ajax({
             url: '{{ route("invoices.store") }}?token=' + token,
             method: 'POST',

@@ -46,14 +46,19 @@ class InvoiceController extends Controller
         $invoiceDate = Carbon::now()->toDateTimeString();
         
         $invoice = Invoice::create([
-             'invoice_number' => (string)$invoiceNumber,  // تحويل إلى نص للتخزين
+             'invoice_number' => (string)$invoiceNumber,
             'invoice_date' => $invoiceDate,
             'company_name' => $request->company_name,
             'mobile_no' => $request->mobile_no,
-            'service_type' => $request->service_type,
-            'service_details' => $request->service_details,
-            'service_quantity' => $request->service_quantity,
-            'service_price' => $request->service_price,
+            'customer_trn' => $request->customer_trn,
+            'transaction_type' => $request->transaction_type,
+            'government_fees' => $request->government_fees,
+            'service_fees' => $request->service_fees,
+            'number_of_transactions' => $request->number_of_transactions,
+            'amount' => $request->amount,
+            'cashier_payment' => $request->cashier_payment,
+            'payment_type' => $request->payment_type,
+            'user_name' => $request->user_name,
             'total_fees' => $request->total_fees,
         ]);
         
@@ -69,149 +74,42 @@ class InvoiceController extends Controller
     }
     
   
-// تحويل الفاتورة إلى PDF باستخدام TCPDF (دعم كامل للعربية)
+// تحويل الفاتورة إلى PDF باستخدام TCPDF (مع فصل الـ HTML في ملف منفصل)
 public function downloadPDF($id, Request $request)
 {
     $this->checkAuth($request);
     $invoice = Invoice::findOrFail($id);
-    
+
     // إنشاء PDF جديد
     $pdf = new TCPDF('P', 'mm', 'A4', true, 'UTF-8', false);
     
-    // إعدادات دعم العربية
-    $pdf->SetFont('aealarabiya', '', 14);
+    // إعدادات الخط والترميز
+    $pdf->SetFont('aealarabiya', '', 11);
     $pdf->SetCreator('Zenfine Property Care');
     $pdf->SetAuthor('Zenfine');
     $pdf->SetTitle('Invoice ' . $invoice->invoice_number);
-    $pdf->SetMargins(15, 15, 15);
-    $pdf->SetAutoPageBreak(true, 15);
     
-    // إضافة صفحة مع دعم RTL
+    // إعداد الهوامش
+    $pdf->SetMargins(8, 8, 8);
+    $pdf->SetAutoPageBreak(true, 10);
+    
     $pdf->AddPage();
     $pdf->setRTL(false);
     
-    // تحضير HTML للفاتورة
-    $html = '
-    <!DOCTYPE html>
-    <html>
-    <head>
-        <meta charset="UTF-8">
-        <style>
-            body {
-                font-size: 14px;
-                line-height: 1.3;
-                font-family: "aealarabiya", "dejavusans", sans-serif;
-            }
-            .invoice-box {
-               
-                padding: 20px;
-                
-            }
-            .text-center {
-                text-align: center;
-            }
-            h2, h3 {
-                text-align: center;
-                margin: 10px 0;
-            }
-
-            .row {
-                margin: 15px 0;
-                overflow: hidden;
-            }
-           
-            .clearfix {
-                clear: both;
-            }
-            table {
-                width: 100%;
-                border-collapse: collapse;
-                margin: 15px ;
-            }
-            th, td {
-                border: 1px solid #ddd;
-                padding: 10px;
-                text-align: center;
-            }
-            th {
-                background-color: #f0f0f0;
-                font-weight: bold;
-            }
-            .total-row {
-                background: #f0f0f0;
-                font-weight: bold;
-                margin: 15px ;
-            }
-            .footer {
-                margin-top: 30px;
-                text-align: center;
-                font-size: 11px;
-                color: #666;
-             
-            }
-        </style>
-    </head>
-   <body>
-        <div class="invoice-box">
-            <div class="text-center">
-                <h2 style="color: #0fe916;">ZENFINE PROPERTY CARE</h2>
-                <h3 style="color: #08820c;">INVOICE</h3>
-            </div>
-            
-            <div class="row">
-                <div class="col-half">
-                    <p><strong>Invoice Number  :  </strong> ' . $invoice->invoice_number . '</p>
-                    <p><strong>Invoice Date  :  </strong> ' . $invoice->invoice_date . '</p>
-                    <p><strong>Company / Customer Name : </strong> ' . $invoice->company_name . '</p>
+    // جلب HTML من ملف الـ Blade
+    $html = view('admin.invoice-pdf', compact('invoice'))->render();
     
-                    <p><strong>Mobile Number:</strong> ' . $invoice->mobile_no . '</p>
-                </div>
-            </div>
-            <div class="clearfix"></div>
-            
-            <h3 style="color: #08820c;">Service Details</h3>
-            
-            <table>
-                <thead>
-                    <tr>
-                        <th>Service Type</th>
-                        <th>Service Details</th>
-                        <th>Quantity</th>
-                        <th>Price</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>' . $invoice->service_type . '</td>
-                        <td>' . $invoice->service_details . '</td>
-                        <td>' . $invoice->service_quantity . '</td>
-                        <td>' . number_format($invoice->service_price, 2) . ' SAR</td>
-                    </tr>
-                </tbody>
-            </table>
-            
-            <table>
-                <tbody>
-                    <tr class="total-row">
-                        <th width="30%">Total Amount</th>
-                        <td width="70%"><strong>' . number_format($invoice->total_fees, 2) . ' SAR</strong></td>
-                    </tr>
-                </tbody>
-            </table>
-            
-            
-        </div>
-        <div class="footer">
-                Thank you for trusting us<br>
-                Zenfine Property Care - Professional Property Care Service
-            </div>
-    </body>
-    </html>';
+    // تعديل مسار الشعار في HTML (لأن TCPDF لا يتعامل مع asset() بشكل صحيح)
+    $logoPath = public_path('image/zenfine-logo.jpg');
+    if (file_exists($logoPath)) {
+        $logoBase64 = 'data:image/jpeg;base64,' . base64_encode(file_get_contents($logoPath));
+        $html = str_replace(public_path('image/zenfine-logo.jpg'), $logoBase64, $html);
+    }
     
     // كتابة HTML إلى PDF
     $pdf->writeHTML($html, true, false, true, false, '');
     
-    // إخراج PDF للتحميل
+    // إخراج PDF
     return $pdf->Output('invoice-' . $invoice->invoice_number . '.pdf', 'D');
 }
     
