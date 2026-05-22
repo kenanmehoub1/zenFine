@@ -66,6 +66,9 @@
                     <a href="{{ route('invoices.search', ['token' => request('token')]) }}">
                         <i class="fas fa-search"></i> Old Invoices
                     </a>
+                    <a href="{{ route('admin.videos.index', ['token' => request('token')]) }}">
+                        <i class="fas fa-video"></i> Videos
+                    </a>
                 </nav>
             </div>
             <div class="col-md-10 content">

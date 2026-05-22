@@ -69,7 +69,9 @@ Route::group(['middleware' => 'lang'], function() {
     Route::get('/gallery', function () {
         return view('Gallery');
     })->name('gallery');
-  
+
+    Route::get('/latest-work', [App\Http\Controllers\VideoController::class, 'latestWork'])->name('latest.work');
+
     Route::get('/contact', function () {
         return view('Contact');
     })->name('contact.page');
@@ -89,4 +91,14 @@ Route::prefix('admin')->group(function () {
     Route::get('/invoices/{id}', [InvoiceController::class, 'show'])->name('invoices.show');
     Route::get('/invoices/{id}/pdf', [InvoiceController::class, 'downloadPDF'])->name('invoices.pdf');
     Route::delete('/invoices/{id}', [InvoiceController::class, 'destroy'])->name('invoices.destroy');
-});
+
+ Route::get('/videos', [App\Http\Controllers\VideoController::class, 'index'])->name('admin.videos.index');
+    Route::get('/videos/create', [App\Http\Controllers\VideoController::class, 'create'])->name('admin.videos.create');
+    Route::post('/videos/store', [App\Http\Controllers\VideoController::class, 'store'])->name('admin.videos.store');
+    Route::get('/videos/{id}/edit', [App\Http\Controllers\VideoController::class, 'edit'])->name('admin.videos.edit');
+    Route::put('/videos/{id}', [App\Http\Controllers\VideoController::class, 'update'])->name('admin.videos.update');
+    Route::delete('/videos/{id}', [App\Http\Controllers\VideoController::class, 'destroy'])->name('admin.videos.destroy');
+    Route::post('/videos/update-order', [App\Http\Controllers\VideoController::class, 'updateOrder'])->name('admin.videos.update-order');
+    Route::post('/videos/{id}/toggle-status', [App\Http\Controllers\VideoController::class, 'toggleStatus'])->name('admin.videos.toggle-status');
+
+    });

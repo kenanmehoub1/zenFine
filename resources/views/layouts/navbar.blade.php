@@ -18,8 +18,9 @@
              </ul>
          </li>
              <li ><a href="/gallery" class="nav-1">{{trans('home.gallery')}}</a></li>
-             
-          
+            <li ><a href="/latest-work" class="nav-1">Latest Work</a></li>
+
+
           <li><a href="/about" class="nav-1">{{trans('home.About_Us')}}</a></li>
              <li><a href="/contact" class="nav-1">{{trans('home.contact')}}</a></li>
           <li>
